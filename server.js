@@ -345,7 +345,7 @@ async function startServer() {
         const distPath = path.join(__dirname, 'dist');
         if (fs.existsSync(distPath)) {
             app.use(express.static(distPath));
-            app.get('*', (req, res) => {
+            app.get('/*', (req, res) => {
                 if (!req.path.startsWith('/api')) {
                     res.sendFile(path.join(distPath, 'index.html'));
                 }
