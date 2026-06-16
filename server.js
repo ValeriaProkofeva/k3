@@ -341,19 +341,21 @@ async function startServer() {
             console.log('✓ Тестовые работы добавлены');
         }
         
-        // ===== СТАТИКА ДЛЯ РЕНДЕРА =====
-        const distPath = path.join(__dirname, 'dist');
-        if (fs.existsSync(distPath)) {
-            app.use(express.static(distPath));
-            app.get('/:path*', (req, res) => {
-                if (!req.path.startsWith('/api')) {
-                    res.sendFile(path.join(distPath, 'index.html'));
-                }
-            });
-            console.log('✓ Статические файлы React подключены');
+       const distPath = path.join(__dirname, 'dist');
+if (fs.existsSync(distPath)) {
+    app.use(express.static(distPath));
+    
+    app.use((req, res, next) => {
+        if (!req.path.startsWith('/api')) {
+            res.sendFile(path.join(distPath, 'index.html'));
         } else {
-            console.warn('⚠️ Папка dist не найдена! Соберите проект: npm run build');
+            next();
         }
+    });
+    console.log('✓ Статические файлы React подключены');
+} else {
+    console.warn('⚠️ Папка dist не найдена! Соберите проект: npm run build');
+}
         
         const PORT = process.env.PORT || 3001;
         app.listen(PORT, () => {
