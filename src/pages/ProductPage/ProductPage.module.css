@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Main {
+    background-color: #121212;
+}
+
+.Header {
+    z-index: 100;
+    position: relative;
+} 
+
+.Title {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 60px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.Body {
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Inner {
+    display: flex;
+    flex-direction: column;
+}
+  
+.Catalog {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.Left {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Categories {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Category {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+    overflow: hidden;
+}
+
+.Category:hover {
+    border-color: #F6CC00;
+    background: rgba(246, 204, 0, 0.1);
+}
+
+.CategButton {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    text-align: left;
+    padding-left: 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Активная категория */
+.ActiveCategory {
+    background: #F6CC00 !important;
+    color: #000 !important;
+    border-color: #F6CC00 !important;
+}
+
+.ActiveCategory .CategButton {
+    color: #000 !important;
+}
+
+.Right {
+    flex: 1;
+}
+
+/* Сортировка */
+.SortBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.SortLabel {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.SortSelect {
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.SortSelect:hover {
+    border-color: #F6CC00;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.SortSelect:focus {
+    outline: none;
+    border-color: #F6CC00;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.SortSelect option {
+    background: #21201C;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+/* Сетка товаров - 3 в ряд */
+.ProductsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Карточка товара */
+.Card {
+    font-family: "Inter", sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.Card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(246, 204, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.Card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.CardDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.CardDescription {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.CardPrice {
+    font-size: 18px;
+    font-weight: 700;
+    color: #F6CC00;
+    margin: 0;
+}
+
+.CardSell {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Пагинация */
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 40px 0 20px;
+    flex-wrap: wrap;
+}
+
+.PageBtn {
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.PageBtn:hover:not(:disabled) {
+    background: rgba(246, 204, 0, 0.2);
+    border-color: #F6CC00;
+    color: #F6CC00;
+}
+
+.PageBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.PageNumbers {
+    display: flex;
+    gap: 8px;
+}
+
+.PageNumber {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.PageNumber:hover {
+    background: rgba(246, 204, 0, 0.2);
+    border-color: #F6CC00;
+}
+
+.ActivePage {
+    background: #F6CC00;
+    color: #000;
+    border-color: #F6CC00;
+}
+
+.ActivePage:hover {
+    background: #F6CC00;
+    color: #000;
+}
+
+.PaginationInfo {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.Loading {
+    text-align: center;
+    padding: 100px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ БОЛЬШИХ НОУТБУКОВ (1400px)        */
+/* ============================================= */
+@media (max-width: 1400px) {
+    .Title {
+        width: 100%;
+        padding: 0 30px;
+        font-size: 48px;
+        text-align: center;
+    }
+    
+    .Body {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ПЛАНШЕТОВ (1024px)                */
+/* ============================================= */
+@media (max-width: 1024px) {
+    .Title {
+        font-size: 40px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .Catalog {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .Left {
+        width: 100%;
+    }
+    
+    .Categories {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 8px;
+    }
+    
+    .Category {
+        width: 100%;
+        height: 44px;
+    }
+
+    .CategButton {
+        font-size: 13px;
+        padding-left: 12px;
+    }
+    
+    .ProductsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .Card img {
+        height: 180px;
+    }
+
+    .SortBar {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .SortLabel {
+        font-size: 13px;
+    }
+
+    .SortSelect {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .Pagination {
+        gap: 10px;
+    }
+
+    .PageNumber {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .PageBtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ПЛАНШЕТОВ (768px)        */
+/* ============================================= */
+@media (max-width: 768px) {
+    .Title {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    .Body {
+        padding: 0 20px;
+    }
+
+    .Catalog {
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .Categories {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 6px;
+    }
+
+    .Category {
+        height: 40px;
+    }
+
+    .CategButton {
+        font-size: 12px;
+    }
+    
+    .ProductsGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .Card img {
+        height: 200px;
+    }
+
+    .CardDesc {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .CardDescription {
+        font-size: 13px;
+    }
+
+    .CardPrice {
+        font-size: 16px;
+    }
+    
+    .Pagination {
+        gap: 8px;
+    }
+    
+    .PageBtn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .PageNumber {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .PaginationInfo {
+        font-size: 12px;
+    }
+    
+    .SortBar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .SortSelect {
+        width: 100%;
+    }
+
+    .Loading {
+        padding: 60px 20px;
+        font-size: 16px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (480px)                 */
+/* ============================================= */
+@media (max-width: 480px) {
+    .Title {
+        font-size: 26px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        padding: 0 16px;
+    }
+
+    .Body {
+        padding: 0 16px;
+    }
+
+    .Catalog {
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .Categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .Category {
+        height: 38px;
+        border-radius: 6px;
+    }
+
+    .CategButton {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+    
+    .ProductsGrid {
+        gap: 12px;
+    }
+
+    .Card {
+        border-radius: 10px;
+    }
+
+    .Card img {
+        height: 180px;
+    }
+
+    .CardDesc {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .CardDescription {
+        font-size: 12px;
+        -webkit-line-clamp: 2;
+    }
+
+    .CardPrice {
+        font-size: 15px;
+    }
+
+    .CardSell {
+        font-size: 12px;
+    }
+    
+    .SortBar {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        gap: 8px;
+    }
+
+    .SortLabel {
+        font-size: 12px;
+    }
+
+    .SortSelect {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .Pagination {
+        gap: 6px;
+        margin: 30px 0 15px;
+    }
+    
+    .PageBtn {
+        padding: 6px 8px;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+    
+    .PageNumbers {
+        gap: 5px;
+    }
+
+    .PageNumber {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+
+    .PaginationInfo {
+        font-size: 11px;
+        margin-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    .Loading {
+        padding: 40px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (375px)        */
+/* ============================================= */
+@media (max-width: 375px) {
+    .Title {
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        padding: 0 12px;
+    }
+
+    .Body {
+        padding: 0 12px;
+    }
+
+    .Categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .Category {
+        height: 36px;
+    }
+
+    .CategButton {
+        font-size: 11px;
+        padding-left: 8px;
+    }
+
+    .Card img {
+        height: 160px;
+    }
+
+    .CardPrice {
+        font-size: 14px;
+    }
+
+    .PageNumber {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .PageBtn {
+        padding: 5px 7px;
+        font-size: 10px;
+    }
+}

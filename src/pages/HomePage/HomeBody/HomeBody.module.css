@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Blocks {
+    background-image: url(/public/Image/Exclude.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 1080px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Title {
+    background-color: #121212;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 140px;
+    padding-bottom: 100px;
+}
+
+/* Контейнер для правого и левого блоков */
+.ContentWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px;
+}
+
+.Left {
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+}
+
+.LeftUp {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.LeftDown {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.Right {
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 0 0 auto;
+}
+
+.RightItem {
+    position: relative;
+    padding-right: 20px;
+}
+
+.Under {
+    background-color: #121212;
+}
+
+.Sale {
+    padding-top: 150px;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #121212;
+}
+
+.Plus {
+    background-color: #121212;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 190px;
+    margin-top: 120px;
+    padding-bottom: 200px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Block {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 0 0 auto;
+}
+
+.About {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 28px;
+}
+
+.Box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Box:hover {
+    background-color: #F6CC00;
+    transform: scale(1.2);
+}
+
+.Numb {
+    display: none;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.Box:hover + .Numb {
+    display: block;
+}
+
+.Desc {
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ПЛАНШЕТОВ (1024px)                */
+/* ============================================= */
+@media (max-width: 1024px) {
+    .Blocks {
+        min-height: 800px;
+    }
+
+    .Title {
+        font-size: 44px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .ContentWrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding: 0 30px;
+    }
+
+    .Left {
+        text-align: center;
+    }
+
+    .LeftUp {
+        font-size: 36px;
+    }
+
+    .LeftDown {
+        font-size: 18px;
+    }
+
+    .Right {
+        text-align: center;
+        font-size: 20px;
+        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .RightItem {
+        padding-right: 0;
+    }
+
+    .Sale {
+        font-size: 44px;
+        padding-top: 100px;
+    }
+
+    .Plus {
+        gap: 40px 80px;
+        margin-top: 80px;
+        padding-bottom: 120px;
+    }
+
+    .About {
+        font-size: 24px;
+    }
+
+    .Block {
+        gap: 20px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ПЛАНШЕТОВ (768px)        */
+/* ============================================= */
+@media (max-width: 768px) {
+    .Blocks {
+        min-height: 600px;
+    }
+
+    .Title {
+        font-size: 34px;
+        padding-top: 70px;
+        padding-bottom: 40px;
+    }
+
+    .ContentWrapper {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .LeftUp {
+        font-size: 28px;
+    }
+
+    .LeftDown {
+        font-size: 16px;
+    }
+
+    .Right {
+        font-size: 18px;
+        gap: 15px;
+    }
+
+    .Sale {
+        font-size: 34px;
+        padding-top: 70px;
+    }
+
+    .Plus {
+        gap: 30px 40px;
+        margin-top: 50px;
+        padding-bottom: 80px;
+    }
+
+    .About {
+        font-size: 20px;
+    }
+
+    .Block {
+        gap: 15px;
+    }
+
+    .Desc {
+        font-size: 13px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (480px)                 */
+/* ============================================= */
+@media (max-width: 480px) {
+    .Blocks {
+        min-height: 500px;
+    }
+
+    .Title {
+        font-size: 26px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .ContentWrapper {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .LeftUp {
+        font-size: 24px;
+    }
+
+    .LeftDown {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .Right {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .Sale {
+        font-size: 26px;
+        padding-top: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .Plus {
+        gap: 30px 30px;
+        margin-top: 40px;
+        padding-bottom: 60px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .About {
+        font-size: 18px;
+    }
+
+    .Block {
+        gap: 12px;
+        width: 45%;
+        min-width: 140px;
+    }
+
+    .Desc {
+        font-size: 12px;
+    }
+
+    .Box {
+        width: 18px;
+        height: 18px;
+    }
+
+    .Numb {
+        font-size: 12px;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (375px)        */
+/* ============================================= */
+@media (max-width: 375px) {
+    .Blocks {
+        min-height: 420px;
+    }
+
+    .Title {
+        font-size: 22px;
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .LeftUp {
+        font-size: 20px;
+    }
+
+    .LeftDown {
+        font-size: 13px;
+    }
+
+    .Right {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .Sale {
+        font-size: 22px;
+        padding-top: 40px;
+    }
+
+    .Plus {
+        gap: 20px 20px;
+        margin-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .About {
+        font-size: 16px;
+    }
+
+    .Block {
+        gap: 10px;
+        width: 44%;
+        min-width: 120px;
+    }
+
+    .Desc {
+        font-size: 11px;
+    }
+
+    .Box {
+        width: 16px;
+        height: 16px;
+    }
+}

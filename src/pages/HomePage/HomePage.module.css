@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Para {
+    position: fixed;
+}
+
+.Main {
+    width: 100%;
+    min-height: 100vh; /* Изменил 100vw на 100vh (viewport height, не width) */
+    background-color: #121212;
+    position: relative;
+}
+
+.Header {
+    z-index: 10;
+    position: relative;
+}
+
+.Slider {
+    z-index: 5;
+    position: relative;
+}
+
+.Body {
+    z-index: 2;
+    position: relative;
+}
+
+.Modals {
+    z-index: 2;
+    position: relative;
+    background-color: #121212;
+}
+
+.Footer {
+    z-index: 2;
+    position: relative;
+    background-color: #121212;
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ПЛАНШЕТОВ (1024px и меньше)        */
+/* ============================================= */
+@media screen and (max-width: 1024px) {
+    .Main {
+        min-height: 100vh;
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (480px и меньше)         */
+/* ============================================= */
+@media screen and (max-width: 480px) {
+    .Main {
+        min-height: 100vh;
+    }
+
+    .Header {
+        position: sticky;
+        top: 0;
+    }
+
+    .Para {
+        position: absolute; /* На телефонах fixed может мешать */
+    }
+}
+
+/* ============================================= */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (375px)        */
+/* ============================================= */
+@media screen and (max-width: 375px) {
+    .Main {
+        min-height: 100vh;
+    }
+}
